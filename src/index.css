@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-vga: 'Perfect DOS VGA 437', 'Px437 IBM VGA 8x16', 'VT323', ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --background: #0000aa;
+  --foreground: #aaaaaa;
+  --primary: #aaaaaa;
+  --primary-foreground: #0000aa;
+  --secondary: #0000aa;
+  --secondary-foreground: #aaaaaa;
+  --accent: #aaaaaa;
+  --accent-foreground: #0000aa;
+  --destructive: #aa0000;
+  --input: #aaaaaa;
+  --ring: #ffffff;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #0000aa;
+  color: #aaaaaa;
+  font-family: var(--font-vga);
+  -webkit-font-smoothing: none;
+  text-rendering: optimizeSpeed;
+  overflow: hidden;
+}
+
+@keyframes press-any-key-pulse {
+  0% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.45;
+  }
+}
+
+.press-any-key-pulse {
+  animation: press-any-key-pulse 2.8s ease-in-out infinite;
+}
+
