@@ -10,15 +10,6 @@ export default function HighContrastPage() {
           improve the lives of people around me, and I have a particular interest in operating systems, neural
           networks, and old technology.
         </p>
-        <p>
-          <a href="https://github.com/packjackisback">GitHub</a>
-        </p>
-        <p>
-          <a href="https://www.linkedin.com/in/jackson-macgregor-344a222a4/">LinkedIn</a>
-        </p>
-        <p>
-          <a href="mailto:jackson.n.macgregor@gmail.com">Email</a>
-        </p>
       </section>
 
       <section>

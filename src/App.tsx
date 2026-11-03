@@ -40,6 +40,7 @@ export default function App() {
     if (typeof window === 'undefined') return true;
     return window.localStorage.getItem(INTRO_SEEN_KEY) !== '1';
   });
+  const autoDropTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (showContent) fallenRef.current = true;
@@ -72,6 +73,26 @@ export default function App() {
     setIntroIdle(true);
     setRun(value => value + 1);
   }, []);
+
+  useEffect(() => {
+    if (!introIdle) {
+      if (autoDropTimerRef.current) {
+        window.clearTimeout(autoDropTimerRef.current);
+        autoDropTimerRef.current = null;
+      }
+      return;
+    }
+    autoDropTimerRef.current = window.setTimeout(() => {
+      void drop();
+      autoDropTimerRef.current = null;
+    }, 5000);
+    return () => {
+      if (autoDropTimerRef.current) {
+        window.clearTimeout(autoDropTimerRef.current);
+        autoDropTimerRef.current = null;
+      }
+    };
+  }, [introIdle, drop]);
 
 
   useEffect(() => {
