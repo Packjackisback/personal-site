@@ -52,3 +52,8 @@ export default defineConfig({
     __HOST_CPU_PERCENT__: JSON.stringify(Math.max(0, Math.min(100, Math.round(HOST_CPU_PERCENT))))
   }
 });
+
+
+server: {
+  allowedHosts: true
+}
