@@ -2,6 +2,8 @@ import FallingText from '@/components/FallingText';
 import TextType from '@/components/TextType';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+const BREAKPOINT = "min-width: 600px";
+
 const SCREEN = [
   '',
   '',
@@ -187,7 +189,7 @@ export default function App() {
       >
         {introIdle && (
           <p className="pointer-events-none absolute right-0 bottom-10 left-0 z-30 text-center text-[clamp(18px,2.4vw,28px)] press-any-key-pulse">
-            Press any key
+            Press any key (or click/tap)
           </p>
         )}
         <FallingText
