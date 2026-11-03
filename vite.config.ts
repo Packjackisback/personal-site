@@ -50,10 +50,10 @@ export default defineConfig({
     __HOST_RAM_TOTAL_GB__: JSON.stringify(formatGb(HOST_RAM_TOTAL_GB)),
     __HOST_RAM_USED_GB__: JSON.stringify(formatGb(HOST_RAM_USED_GB)),
     __HOST_CPU_PERCENT__: JSON.stringify(Math.max(0, Math.min(100, Math.round(HOST_CPU_PERCENT))))
+  },
+  server: {
+    allowedHosts: ['jacksonm.dev'],
   }
 });
 
 
-server: {
-  allowedHosts: true
-}
